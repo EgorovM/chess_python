@@ -93,6 +93,20 @@ class GUI:
         self._running = False
         self.size = self.width, self.height = 640, 480
 
+    def draw_lines(self):
+        for i in range(9):
+            pygame.draw.line(
+                self._screen, 
+                [0, 0, 0],
+                (i*50, 0),
+                (i*50, 50*8))
+            
+            pygame.draw.line(
+                self._screen, 
+                [0, 0, 0],
+                (0, i*50),
+                (50*8, i*50, ))
+
 
     def _on_init(self):
         pygame.init()
@@ -153,8 +167,9 @@ class GUI:
 
     def _on_render(self):
         self._screen.fill('white')
-        
+
         [figure.blit() for figure in self.figures]
+        self.draw_lines()
 
         pygame.display.flip()
 
