@@ -1,5 +1,7 @@
 from typing import Dict, Tuple, List
+
 coord = Tuple[int, int]
+
 
 class Figure:
     def __init__(self, start_pos: coord) -> None:
